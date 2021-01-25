@@ -1,0 +1,130 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 HelveticaNeue;
+\f3\fnil\fcharset0 HelveticaNeue-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red25\green60\blue255;\red251\green0\blue7;
+}
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c12594\c35385\c100000;\cssrgb\c100000\c12195\c0;
+}
+\margl1440\margr1440\vieww17680\viewh23600\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl264\slmult1\pardirnatural\partightenfactor0
+
+\f0\b\fs32 \cf0 1/24/21\
+DATA QUEST COURSE 1: Python for Data Science: Fundamentals\
+\pard\pardeftab560\slleading20\partightenfactor0
+
+\f1 \cf0 Section 3: Lists and Loops
+\f2\b0 \
+\pard\tx720\pardeftab560\slleading20\partightenfactor0
+\cf0 \
+\
+\pard\pardeftab560\slleading20\partightenfactor0
+\cf0 1) \cf2 len( list )\
+\cf0 - takes in list, returns integer referring to length of the list ( JS equivalent is array.length )\
+Example:\
+	arr1 = [1,2,3]\
+	print(len(arr1))		#=> 3\
+\
+\
+2) negative indexing\
+- no negative indexing in JS\
+Example:\
+	nums = [ 3, 5, 1 ] \
+	\cf3 nums[
+\f1\b -1
+\f2\b0 ]\cf0 			#=> 1	(
+\f1\b \ul last element
+\f2\b0 \ulnone )\
+\
+\
+3) accessing index outside of list results in error (Unlike in JS you get undefined)\
+\
+\
+4) \cf2 list slicing array[ begin : end ]\cf0 \
+- slices from beginign (inclusive) to last index (exclusive just like in JS)\
+- returns new shallow copy of array (only 1 level copied just like in JS)\
+Example 1:\
+	arr1 = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	arr1[ 0:2 ]					#=> [ \'91a\'92, \'91b\'92 ]\
+\
+Example 2: \ul shortcut to select first x elements\ulnone  (inclusive)\
+	arr1 = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	arr1[\cf3 :2\cf0 ]						#=> [ \'91a\'92, \'91b\'92 ]\
+\
+Example 3: \ul shortcut to select last x elements \ulnone (inclusive)\
+	arr1 = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	arr1[\cf3 -2:\cf0 ]					#=> [ \'91b\'92, \'91c\'92 ]\
+\
+Example 4: \ul shortcut to select x elements from start to end\ulnone  of array (inclusive)\
+	arr1 = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	arr1[ \cf3 1: \cf0 ]					#=> [ \'91b\'92, \'91c\'92 ]\
+\
+\
+5) \cf2 open( \'91filename\'92 )\cf0 \
+- takes in string of filename, returns a \ul file object\ulnone \
+- used as input for reader( file object ) function\
+\
+\
+6) \cf2 reader( file object )\cf0 \
+- takes in file object, returns a \ul reader object\ulnone \
+- needs to be imported from csv module\
+Example:\
+	\cf3 from csv import reader\cf0 \
+\
+\
+7) \cf2 list( reader object )\cf0 \
+- takes in a reader object, returns a list of lists (2d List, where each list represents a row from the csv file)\
+Example:\
+	from csv import reader\
+	opened_file = open( \'91prices.csv\'92 )\
+	read_file = reader( opened_file )\
+	apps_data = list( read_file )\
+\
+\
+8) LOOPS-
+\f1\b  \cf2 for 
+\f3\i element
+\f1\i0  in 
+\f3\i list:
+\f2\i0\b0 \cf0 \
+- similar to JS array.forEach method or for (let ele in object) \{ \}\
+Example: \
+	letters = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	for letter in letters:\
+		print(letter)			#=> \'91a\'92, \'91b\'92, \'91c\'92\
+\
+\
+9) convention is to indent code 4 space characters (although only 1 space character is needed)\
+\
+\
+10) 
+\f1\b \cf2 list.append( element )
+\f2\b0 \cf0  method\
+- takes in element to append to end of list\
+- returns None (unlike in JS, .push returns new array length)\
+- similar to JS array.push( element ) \
+- mutates list\
+\
+\
+11) 
+\f1\b \cf4 sum( list )
+\f2\b0 \cf0 \
+- takes in a list, returns a number referring to sum of elements in list\
+\
+\
+\
+\
+\
+\
+\
+\
+QUESTIONS\
+- new sliced is only shallow copy like in JS right?- YES\
+- can we break out of for \'85 in \'85 loops (can\'92t in JS with .forEach method)?\
+- why do we need to open file, then read it, then convert it into list? Seems like a lot of steps\
+\
+\
+\
+\
+\
+\
+}
