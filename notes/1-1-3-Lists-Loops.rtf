@@ -1,19 +1,22 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
-{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fnil\fcharset0 HelveticaNeue-Bold;\f2\fnil\fcharset0 HelveticaNeue;
-\f3\fnil\fcharset0 HelveticaNeue-BoldItalic;}
-{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red25\green60\blue255;\red251\green0\blue7;
+{\rtf1\ansi\ansicpg1252\cocoartf2578
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 HelveticaNeue-Bold;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fnil\fcharset0 HelveticaNeue-BoldItalic;}
+{\colortbl;\red255\green255\blue255;\red251\green0\blue7;\red25\green60\blue255;\red25\green60\blue255;
 }
-{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c12594\c35385\c100000;\cssrgb\c100000\c12195\c0;
+{\*\expandedcolortbl;;\cssrgb\c100000\c12195\c0;\cssrgb\c12594\c35385\c100000;\cssrgb\c12594\c35385\c100000;
 }
-\margl1440\margr1440\vieww17680\viewh23600\viewkind0
+\margl1440\margr1440\vieww17680\viewh19080\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\sl264\slmult1\pardirnatural\partightenfactor0
 
 \f0\b\fs32 \cf0 1/24/21\
-DATA QUEST COURSE 1: Python for Data Science: Fundamentals\
+1-1-3: Step 1, Part 1, Section 3\
+
+\f1\b0 DATA QUEST COURSE 1: Python for Data Science: Fundamentals
+\f0\b \
 \pard\pardeftab560\slleading20\partightenfactor0
 
-\f1 \cf0 Section 3: Lists and Loops
-\f2\b0 \
+\f2 \cf0 Module 3: \ul Lists and Loops
+\f3\b0 \ulnone \
 \pard\tx720\pardeftab560\slleading20\partightenfactor0
 \cf0 \
 \
@@ -30,10 +33,10 @@ Example:\
 Example:\
 	nums = [ 3, 5, 1 ] \
 	\cf3 nums[
-\f1\b -1
-\f2\b0 ]\cf0 			#=> 1	(
-\f1\b \ul last element
-\f2\b0 \ulnone )\
+\f2\b \cf3 -1
+\f3\b0 \cf3 ]\cf0 			#=> 1	(
+\f2\b \ul last element
+\f3\b0 \ulnone )\
 \
 \
 3) accessing index outside of list results in error (Unlike in JS you get undefined)\
@@ -81,24 +84,24 @@ Example:\
 \
 \
 8) LOOPS-
-\f1\b  \cf2 for 
-\f3\i element
-\f1\i0  in 
-\f3\i list:
-\f2\i0\b0 \cf0 \
+\f2\b  \cf2 for 
+\f4\i element
+\f2\i0  in 
+\f4\i list:
+\f3\i0\b0 \cf0 \
 - similar to JS array.forEach method or for (let ele in object) \{ \}\
 Example: \
-	letters = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
+	\cf4 letters = [ \'91a\'92, \'91b\'92, \'91c\'92 ]\
 	for letter in letters:\
-		print(letter)			#=> \'91a\'92, \'91b\'92, \'91c\'92\
+		print(letter)	\cf0 		#=> \'91a\'92, \'91b\'92, \'91c\'92\
 \
 \
 9) convention is to indent code 4 space characters (although only 1 space character is needed)\
 \
 \
 10) 
-\f1\b \cf2 list.append( element )
-\f2\b0 \cf0  method\
+\f2\b \cf2 list.append( element )
+\f3\b0 \cf0  method\
 - takes in element to append to end of list\
 - returns None (unlike in JS, .push returns new array length)\
 - similar to JS array.push( element ) \
@@ -106,9 +109,13 @@ Example: \
 \
 \
 11) 
-\f1\b \cf4 sum( list )
-\f2\b0 \cf0 \
+\f2\b \cf2 sum( list )
+\f3\b0 \cf0 \
 - takes in a list, returns a number referring to sum of elements in list\
+\
+\
+Looping (advanced)- with indexes\
+https://treyhunner.com/2016/04/how-to-loop-with-indexes-in-python/\
 \
 \
 \
