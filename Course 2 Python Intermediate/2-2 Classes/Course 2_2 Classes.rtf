@@ -1,0 +1,224 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red251\green0\blue7;\red0\green0\blue0;
+\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c100000\c12195\c0;\cssrgb\c0\c1\c1;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww15060\viewh22280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1/2/19\
+Step 1: Python Introduction\
+Course 2: Python Programming Intermediate\
+Mission 2 : Classes\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 1. \cf2 objects\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - strings, integers, floats, functions, etc. are all objects\
+\
+\
+\
+2. 
+\f1\b \cf2 classes
+\f0\b0 \cf0  (think of them as categories or blueprints to build objects)\
+	ex. count = 8\
+	- count variable is of the class called \'93Integer\'94
+\f1\b \
+
+\f0\b0 - think of a class as the blueprint to construct objects with. \
+- these blueprints share similar functions (called methods)
+\f1\b \
+	
+\f0\b0 ex. when we create a list object, every list will have the append method defined by the list class
+\f1\b \
+- \cf2 attributes\cf0 - f
+\f0\b0 unctions and variables related to a class object\
+- reason to use classes is to promote code abstraction (helps us not having to write same code over and over)\
+- we can use a class to bundle up multiple functions to reuse/share\
+- the first letter of every word of a class name must be uppercase (ex. PascalCase)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\
+\
+3.  creating a class
+\f0\b0 \
+syntax:
+\f1\b \
+	\cf2 class _____: \cf0 \
+		
+\f0\b0 body
+\f1\b \
+ex. \
+	\cf3 >>> 	class Dataset:				\cf4 # creates class called \'91Dataset\'92\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 			def __init__(self):		\cf4 # creates function for method called __init__()\cf3 \
+				self.type = \'91csv\'92\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \ul \ulc0 NOTE* internal functions of a class are called methods\ulnone \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 	>>>	new_dataset = Dataset()
+\f1\b \cf0 \
+	
+\f0\b0 - here I am creating a variable, new data_set, that refers to the Dataset Class\
+	- this creates the new object and then sets those attributes to the \ul instance
+\f1\b \ulnone \
+- to access attributes of a class we use \cf2 dot notation\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 ex.\
+	
+\f0\b0 \cf3 >>>	print(new_dataset
+\f1\b \cf2 .
+\f0\b0 \cf3 type)\cf0 	# prints out \'93csv\'94\
+- NOTE* self is like a name place holder to store data. you can name it whatever you want, but the default is self
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - Highly recommended to use self instead of renaming it
+\f1\b \
+
+\f0\b0 - when creating an object you never have to worry about passing in a self object on instantiation since this is done automatically by the python interpreter?\
+-
+\f1\b  \cf2 __init__()
+\f0\b0 \cf0  method is automatically called once whenever an object is created of this Dataset class. 
+\f1\b \ul only runs once!
+\f0\b0 \ulnone \
+	- __init__() does NOT RETURN ANYTHING! it returns None (object TBD later)\
+ex.\
+	\cf3 >>> 	Class Dataset:\
+			def __init__(self):\
+				self.type = \'92csv\'92\cf0 \
+	\cf3 >>>	dataset = Dataset()\cf0 		# creates \ul instance\ulnone  of dataset class and assigns to variable dataset, \ul self is 								automatically passed in!!\ulnone \
+	\cf3 >>>	print(dataset.type)\cf0 		# print the type attribute of the dataset instance\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 	output:\
+	
+\f2\b0\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+Dataset\'a0(<class '__main__.Dataset'>)\
+\pard\pardeftab720\sl375\partightenfactor0
+\cf5 <__main__.Dataset at 0x7f2d2cfebef0>\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b\fs28 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 3. dynamically adding data to our dataset example by adding an additional argument
+\f1\b \
+	\cf3 >>> 	import csv\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 	>>> 	class Dataset:\
+			def __init__(self, data):		
+\f0\b0 \cf4 # defining function with added data parameter
+\f1\b \cf3 \
+				self.data = data			
+\f0\b0 \cf4 # data on right hand side is attribute name
+\f1\b \cf3 \
+	>>>	f = open(\'91filename.csv\'92)\
+	>>>	csvreader = csv.reader(f)\
+	>>>	csv_data = list(csvreader)\
+	>>>	csv_dataset = Dataset(csv_data)\
+	>>>	print(csv_dataset.data[:10]			
+\f0\b0 \cf4 # prints the first 10 rows of the csv data
+\f1\b \cf3 \
+	\cf4 output:\
+	\cf0 \
+\
+\
+4. \cf2 enumerate()\cf0  function- \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - takes in a list, optional argument default = 1 to start indexing\
+- returns an enumerate object (which yields index  and corresponding value)\
+ex. \
+	\cf3 >>> pets = [\'91harry\'92, \'91bleu\'92, \'91red\'92]\
+	>>> enumerate_object = enumerate(pets)\cf0  	# returns enumerate object NOT a list (contains pairs)\
+	\cf3 >>> print(list(enumerate_object))	\cf0 		# convert enumerate object into list (contains pairs)\
+	output:\
+	[ (0, \'91harry\'92), (1, \'91bleu\'92), (2, \'91red\'92) ]
+\f1\b \
+\
+
+\f0\b0 ex2. \
+	\cf3 >>> 	for index, value in enumerate([\'91harry\'92, \'91bleu\'92]):\
+	>>> 		print(index, value)	\cf0 		\
+	output:\
+	0 harry\
+	1 bleu\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\
+\
+5.\cf2  not in\cf0 -\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 ex. 
+\f1\b \
+	
+\f0\b0 \cf3 >>>	pets = [\'91scooby\'92, \'91bleu\'92]\
+	>>>	if \'91harry\'92 \cf2 not in\cf3  pets:\
+			print(\'91not there!\'92)\
+	\cf4 output:\
+	not there!\
+\
+\
+\
+6. \cf2 set() \cf4 function\
+- takes in list\
+- returns only the unique elements in a list, returns its own class called set\
+- values in returned set object are NOT indexable, however the len() function can be used on it\
+ex. \
+\cf3 	>>>	pets = [\'91lab\'92, \'91corgi\'92, \'91corgi\'92]\
+		unique_breeds = sets(pets) 		\
+		print(unique_breeds)\cf4 \
+	output:\
+	\{ \'91corgi\'92, \'91labrador\'92 \}\
+\
+\
+\
+\
+7. \cf2 __str__()\cf4  method\
+- another special method like __init__()\
+- can only be defined within a class?\
+- tells the python interpreter how to represent your object as a string\
+- ex. customize the way it looks when we display the object using the print() function\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\
+Questions\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 1. what is NOT an object? (ex. a letter in a variable name?)\
+\
+2. still don\'92t get method vs function?\
+\
+3. can classes be part of other classes?\
+\
+4. why do I have to instantiate the object? see ex:\
+\cf3 >>>	new_dataset = Dataset()
+\f1\b \cf0 \
+	
+\f0\b0 - here I am creating a variable, new data_set, that refers to the Dataset Class\
+	- this creates the new object and then sets those attributes to the instance\
+\
+5. why is it bad to rename self?\
+\
+6. self only exists within that function/method right?\
+\
+7. what does the comma signify in the for counter, value in enumerate example?\
+explain this syntax\
+\
+}

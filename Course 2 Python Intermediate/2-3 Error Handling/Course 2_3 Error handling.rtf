@@ -1,0 +1,174 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red0\green0\blue0;\red251\green0\blue7;
+}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
+}
+\margl1440\margr1440\vieww15700\viewh23500\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1/3/19\
+Step 1: Python Introduction\
+Course 2: Python Programming Intermediate\
+Mission 3 : Error Handling\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 1. \cf2 set() \cf3 function\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 - takes in a list
+\f1\b \cf3 \
+
+\f0\b0 \cf3 - returns a set object that contains all the \ul unique\ulnone  elements in a list\
+- notice the \{\} because \ul \ulc3 sets don\'92t have indexes\ulnone \
+\cf0 ex. \
+	\cf4 >>> 	unique_animals = set( [\'91dog\'92,\'92dog\'92,\'92cat\'92] )\
+		print(unique_annimals)\cf0 \
+		output:\
+		\{ \'91dog\'92, \'91cat\'92 \}\
+\
+2. \cf2 .add() \cf0 method\
+- takes in ONE argument (input must be an element NOT a list)\
+- adds a UNIQUE item to a 
+\f1\b \ul SET
+\f0\b0  \ulnone not a list (i.e. if you were to add another \'91harry\'92 below, it wouldn\'92t do anything/modify pets\
+ex. \
+\cf4 	>>>	pets = \{ \'91harry\'92, \'91bleu\'92 \}\
+		pets.add(\'91red\'92)\
+		print(pets)\cf0 \
+	output:\
+	\{ \'91harry\'92, \'91bleu\'92, \'91red\'92 \}\
+\
+\
+\
+3. \cf2 .remove()\cf0  method\
+-  takes in ONE argument (input must be an element NOT a list)\
+- removes an item to a 
+\f1\b \ul SET
+\f0\b0  \ulnone not a list\
+ex. \
+\cf4 >>>	pets = \{ \'91harry\'92, \'91bleu\'92 , \'91red\'92 \}\
+		pets.remove(\'91red\'92)\
+		print(pets)\cf0 \
+	output:\
+	\{ \'91harry\'92, \'91bleu\'92, \}\
+\
+\
+\
+4. \cf2 list() \cf0 method\
+- converts a set to a list, or converts iterable (like list, set, string\'85) to list\
+- takes in ONE argument (string element, list, or set\'85)\
+- returns list\
+ex. \
+	\cf4 >>> 	set1 = \{ \'91harry\'92, \'91bleu\'92 \}\
+		print(list(set1))\cf0 \
+	output:\
+	[\'91harry\'92, \'91bleu\'92] \
+or\
+ex2.\
+	\cf4 >>> 	str1 = \'91harry\'92\
+		print(list(str1))\cf0 \
+	output:\
+	[ \'91h\'92, \'91a\'92, \'91r\'92, \'91r\'92, \'91y\'92 ]\
+\
+\
+\
+5. Tips for when I have a fresh dataset- look for patterns\
+- look for missing data, like empty fields or N/A that indicate missing values\
+- values that don\'92t make sense like a someone with a birthday of 2050\
+- recurring themes like if a significant portion of the legislators are males\
+\
+\
+\
+6. Solutions when you find missing data in a dataset:\
+- remove any rows that contain missing data\
+- populate the empty fields with a specified value\
+- populate the empty fields with a calculated value\
+- use analysis techniques that work with missing data (to be discussed later)\
+\
+\
+\
+\
+7. \cf2 try/except\cf0  block\
+\cf2 try:\
+	____\
+except Exception:\
+	____\cf0 \
+- way to manage errors\
+- if you surround the code that causes an error with a  try/except block, the error will be handled\
+and python will continue running on after the except statement\
+\
+ex. if I try to run the following code:\
+\cf4 	>>> 	prices = [ \'911\'92, \'912\'92, \'91\'92, \'914\'92 ]\
+		for each in prices:\
+			each = int(each)\
+		print(prices)\cf0 \
+	output:\
+	ValueError: invalid literal for int() with base 10: \'91\'92\
+so i can wrap the part of the code that caused the error with try/except\
+	\cf4 >>> 	prices = [ \'911\'92, \'912\'92, \'91\'92, \'914\'92 ]\
+		for each in prices:\
+			\cf2 try:\cf4 \
+				each = int(each)\
+			\cf2 except\cf4  \cf2 Exception:\cf4 \
+				print(\'91there was an error\'92)\cf0 \
+		\cf4 print(prices)\cf0 \
+	output:\
+	there was an error\
+	[ \'911\'92, \'912\'92, \'91\'92, \'914\'92 ]\
+\
+\
+\
+8. use a 
+\f1\b \cf2 as
+\f0\b0 \cf0  statement to assign the instance of the Exception class to the variable exc\
+ex. \
+	\cf4 try:\
+		converting = int(\'91\'92)\
+	except Exception \cf2 as\cf4  exc:	\cf3 # capture the exception instance\cf4 \
+		print(type(exc))		\cf3 # print the type of exception instance\cf4 \
+		print(str(exc))	\cf0 	# convert the exception instance to a string and print it out\
+	output:\
+	<class \'91ValueError\'92>\
+	invalid literal for int() with base 10: \'91\'92\
+\
+\
+\
+\
+9. we can 
+\f1\b \cf2 pass
+\f0\b0 \cf0  on an exception instead of writing something in the body\
+ex. \
+\cf4 >>> 	prices = [ \'911\'92, \'912\'92, \'91\'92, \'914\'92 ]\
+		for each in prices:\
+			try:\
+				each = int(each)\
+			except Exception:\
+				\cf2 pass\cf0 \
+		\cf4 print(prices)\cf0 \
+	output:\
+- pass keyword doesn\'92t actually do anything, it\'92s a valid statement body. \
+- we do this when we don\'92t want to print out lots of errors (especially when we\'92re dealing with a huge dataset)\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Questions\
+1. still don\'92t understand the use of \'93\cf2 as\cf0 \'94\
+ex. 	
+\f0\b0 \cf4 try:\
+		int(\'91\'92)\
+	except Exception \cf2 as\cf4  exc:\
+		print(type(exc))
+\f1\b \cf0 \
+\
+\
+}

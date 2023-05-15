@@ -1,0 +1,205 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red0\green0\blue0;\red251\green0\blue7;
+\red88\green138\blue67;\red255\green255\blue255;\red202\green202\blue202;\red194\green126\blue101;\red212\green213\blue154;
+\red67\green192\blue160;}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
+\cssrgb\c41525\c59950\c33208;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c83229\c83229\c83125;\cssrgb\c80778\c56830\c46925;\cssrgb\c86261\c86245\c66529;
+\cssrgb\c30610\c78876\c69022;}
+\margl1440\margr1440\vieww15440\viewh26760\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1/2/19\
+Course 2_1: Python Intermediate\
+Modules\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+1. \cf2 modules\cf0 - 
+\f0\b0 a collection of functions and variables that have been bundled together in a single file
+\f1\b \
+- 
+\f0\b0 most useful functions/objects live in modules that need to be imported into our environment before we can use\
+- helps us organize code by separating related functions and objects into their own modules\
+- gain new functionality by using code written by others without spending a large amount of time diving into how its implemented\
+- organized around a theme. ex math modules, which contains many useful mathematical operations to make analyzing data easier\
+- also csv modules which make working with csv files easier\
+\
+\
+2.
+\f1\b \cf2  import _____
+\f0\b0 \cf0 \
+- we import a module by writing import followed by ____\
+___ = module we want to import\
+\
+- note no need to add .py to end of ____ name\
+\
+\
+3.\cf3  Importing and Accessing a module\cf2 \
+my_module.____\cf0 \
+- use dot notation\
+ex. \
+	\cf4 >>> import my_module\cf0 \
+	\cf4 >>> my_module.some_function()
+\f1\b \cf0 \
+	i
+\f0\b0 n the code above, we call some function which exists in the \'93my_module\'94\
+\
+ex2 	\cf4 >>> import math\
+	>>> root = math.sqrt(100)\
+	>>> print(root)\cf0 \
+	output:\
+	10.0
+\f1\b \
+	\
+\
+4. \cf2 namespace\cf0 - 
+\f0\b0 it\'92s like a \'93slate\'94 that contains all of your current functions and variables. \
+- when you import a module, you\'92re also importing that module\'92s functions/objects into your current namespace
+\f1\b \
+\
+\
+5. 
+\f0\b0 importing a module 
+\f1\b \cf2 as
+\f0\b0 \cf0  a short name
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - instead of 
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 	>>> import my_module\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 you can write
+\f1\b \
+	\cf4 >>> import my_module \cf2 as\cf4  m\cf0 \
+
+\f0\b0 - now you can refer to my_module as \'93m\'94 instead of \'93my_module\'94
+\f1\b \
+\
+\
+6. \cf2 from ____ import ___, ___\cf0  importing specific functions 
+\f0\b0 from a module if we don\'92t want to import all of them\
+from \ul module_name\ulnone  import \ul module_function_name \ulnone \
+ex. \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf4 	>>> from math import function1, function2\cf0 \
+ 	NOTE* if we define our own function1() then it will overwrite the imported function1()\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\
+7. 
+\f0\b0 i
+\f1\b mporting all the objects and functions from a module
+\f0\b0  into the global namespace using the \cf2 * \cf0 symbol\
+ex. \
+
+\f1\b 	
+\f0\b0 \cf4 >>> from my_module import *
+\f1\b \cf0 \
+- 
+\f0\b0 NOT a good practice, because the namespace becomes polluted with all these name referenced to objects I may not be using, and if i\'92m working with multiple modules, there\'92s a chance of overwriting some of the names in the namespace
+\f1\b \
+\
+\
+8. \cf2 Accessing a variable 
+\f0\b0 \cf0 within a module
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - just like how we can access a function from a module, we can access a variable from that module\
+ex.
+\f1\b \
+	
+\f0\b0 \cf4 >>> import my_module\
+	>>> print(my_module.some_variable)
+\f1\b \cf0 \
+\
+9. \cf2 floor() \cf0 method\
+
+\f0\b0 - method within the math module\
+- returns the largest integer \ul not\ulnone  greater than x (ex. converts 13.6 \'97> 13)
+\f1\b \
+\
+10. \cf2 ceil() \cf0 method\
+-
+\f0\b0  method within the math module\
+- returns the smallest integer \ul not\ulnone  less than x (ex. converts 13.6 \'97> 14)
+\f1\b \
+\
+\
+11. \cf2 csv\cf0  module\
+
+\f0\b0 - allows us to work with csv files more easily\
+- has \cf2 reader()\cf0  function\
+	- takes in a file object, returns object that represents our data
+\f1\b \
+ex. \
+	\cf4 >>> import csv\
+	>>> f = open(\'93my_data.csv\'94)\
+	>>> csvreader = csv.reader(f) 	# returns object that represents our data? NOT string\
+	>>> my_data = \cf2 list(\cf4 csvreader\cf2 )\cf4  	# converts csvreader to list (list of list split by \\n and ,\cf0 \
+
+\f0\b0 	output:\
+	[  [\'91bitcoin\'92, \'913000\'92], [\'91ETH\'92, \'91130\'92], [\'91BTH\'92, \'91100\'92]  ]	
+\f1\b \
+\
+\
+12. 
+\f0\b0 \cf2 list() function\cf0  takes in 1 argument that is a string, dictionary/set, or iterator object\
+returns list of elements\
+if no argument is passed it creates an empty list\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 ex.\
+	
+\f2\b0\fs24 \cf5 \cb6 \expnd0\expndtw0\kerning0
+# vowel string\cf7 \
+\pard\pardeftab720\sl360\partightenfactor0
+\cf7 	vowels = \cf8 'aeiou'\cf7 \
+\cf9 	print\cf7 (\cf10 list\cf7 (vowels))\
+\cf5 	# output: ['a', 'e', 'i', 'o', 'u']\cf7 \
+\
+\cf5 	# vowel list\cf7 \
+	vowelList = [\cf8 'a'\cf7 , \cf8 'e'\cf7 , \cf8 'i'\cf7 , \cf8 'o'\cf7 , \cf8 'u'\cf7 ]\
+\cf9 	print\cf7 (\cf10 list\cf7 (vowelList))\
+\cf5 	# output: ['a', 'e', 'i', 'o', 'u']\
+\cf7 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b\fs28 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+\
+\
+\
+\
+Questions\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 1. dot notation looks like a method? what\'92s the difference between a method and accessing a module function?\
+\
+2. what does it mean for \'93objects to be added to the \cf2 top level namespace\cf0  and they aren\'92t prefixed\'94? (see outcome 3 \'93importing a specific object\'94, top paragraph. \
+\
+3. Interpreter vs. Compiler?\
+\
+4. why would we want to import a specific function(s) from a module and not all of them?\
+\
+5. still don\'92t understand what an \'93object\'94 is? is a function an object? is a variable an object? is a statement or boolean an object?\
+\
+6. can programs work with multiple namespaces at a time? (like having multiple internet browser tabs open?)\
+\
+7. if I run a script that defines a variable or function, then delete everything and write a new script. will those previous variables/functions still be in the namespace so I can reference them?\
+\
+8. Difference between \'93import math\'94 and \'93import math*\'94\
+\
+9. difference between csvreader and f in # 11 above?\
+\
+\
+\
+\
+}

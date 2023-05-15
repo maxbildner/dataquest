@@ -1,0 +1,202 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red251\green0\blue7;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c100000\c12195\c0;\cssrgb\c0\c1\c1;
+}
+\margl1440\margr1440\vieww13740\viewh13640\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1/4/19\
+Step 1: Python Introduction\
+Course 2: Python Programming Intermediate\
+Mission 4: List Comprehensions\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 1. \cf2 enumerate()\cf0  function\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 - can have 2 variables  in the body of a for loop: an index, and the value\
+- takes in an 
+\f1\b \cf2 iterable
+\f0\b0 \cf0  (ex. list, set, dictionary, string). ints or floats by themselves are not iterable\
+	- also takes in start (i.e. \
+- returns enumerate object of class \'91enumerate\'92\
+ex1.\
+	\cf3 >>>	animals = [ \'91dog\'92, \'91cat\'92, \'91tiger\'92]\
+	>>>	print(enumerate(animals))\
+	>>>	print(type(enumerate(animals))\
+	\cf4 output:\
+	<enumerate object at >\
+	<class \'91enumerate\'94>\cf0 \
+- if enumerate() is used in a for loop, it can be used to loop through 2 variables in a list/iterable (index, and value)\
+syntax:\
+	\cf2 for ____, ____ in enumerate(____):\
+		____\
+\cf0 ex. \
+	\cf3 >>>	animals = [ \'91dog\'92, \'91cat\'92, \'91tiger\'92]\
+	>>>	for idx, animal in enumerate(animals):\
+			print(\'93animal index = \'93)\
+			print(idx)\
+			print(\'93animal = \'93)\
+			print(animal)\cf0 \
+	output:\
+	animal index = \
+	0\
+	dog\
+	animal index = \
+	1\
+	cat\
+	animal index = \
+	2\
+	tiger\
+- enumerate can also be used to loop through two lists!\
+ex. \
+	\cf3 >>>	animals = [ \'91dog\'92, \'91cat\'92, \'91tiger\'92]\
+		cuteness = [10, 8, 4]\
+\
+		for idx, animal in enumerate(animals):\
+			print(\'93animal: \'94, animal)\
+			print(\'93cuteness: \'94, cuteness[idx])\cf0 \
+	output:\
+	animal: dog\
+	cuteness: 10\
+	animal: cat\
+	cuteness: 8\
+	animal: tiger\
+	cuteness: 4\
+\
+	\
+2. use enumerate() to 
+\f1\b \ul add an extra column to a list of list
+\f0\b0 \ulnone \
+ex. \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 	>>> 	stocks = [  [\'91AAPL\'92, 140], [\'91TSLA\'92, 300]  ]\
+	>>> 	ratings = [ \'91hold\'92, \'91sell\'92  ]\
+		for index, stock in enumerate(stocks):	\cf4 # loops through each item in stocks\
+\cf3 			stock.append(ratings[index])	\cf0 	# appends the item in ratings that has same index\
+									ass the current stock to each list in stocks\
+	output:\
+	[  [\'91AAPL\'92, 140, \'91hold\'92], [\'91TSLA\'92, 300, \'91sell\'92]  ]\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf4 \
+\
+3. 
+\f1\b \cf2 list comprehensions\
+
+\f0\b0 \cf4 - way of condensing a for loop and creating an output from that for loop \
+syntax:\
+	[ ____ for ___ in ___ ]\
+	[ \cf4 \ul \ulc4 output\ulnone  for \ul each\ulnone  in \ul input\ulnone  ]\
+	output = output expression\
+	each = temporary variable that corresponds to an element in a list\
+	input = ex. list\
+ex. \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 	>>> 	prices = [10, 20, 30]\
+		output = [ each*2 for each in prices ]\
+		print(output)\cf4 \
+	output:\
+	[ 20, 40, 60 ]\
+- above example, loops through each element in prices:  multiplies each by 2 then stores it\
+in the output list. \
+\
+\
+\
+\
+\
+\
+4. \cf2 None object\cf4 \
+- none object means that the variable has no value\
+- has special data type called NoneType\
+- use \cf2 is None syntax\cf4  instead of == operator to check whether a value equals none\
+ex. use none is none syntax to find maximum value in a list of negative numbers\
+	\cf3 >>>	values = [ - 20, -50, -100 ]\
+		max_values = \cf2 None\cf3 \
+		for i in values:\
+			if max_values \cf2 is None\cf3  or i > max_values:\
+				max_values = i\
+		print(max_values)\cf4 \
+	output:\
+	-20\
+- CANNOT compare a value to None (will result in error) unless:\
+- using \cf2 is not None syntax\cf4  to compare a value to None\
+ex. create a list that has booleans that correspond to another list and that lists items are None or not\
+	\cf3 >>> 	values = [ None, 10, 20 ]\
+		checks = []\
+		for each in values:\
+			if each \cf2 is not None\cf3  and each > 10:\
+				checks.append(True)\
+			else:\
+				checks.append(False)\cf4 \
+	output:\
+	[ False, False, True ]\
+\
+	\
+	\
+\
+5. 
+\f1\b \cf2 items() 
+\f0\b0 \cf4 method\
+- no inputs\
+- returns a list containing tuples of each key in a dictionary and value\
+- allows us to iterate through keys and values at the same time\
+- uses two variables to loop through in a for loop just like index, value in enumerate()\
+- this is a cleaner way of looping through dictionaries \
+ex. \
+	\cf3 >>>	assets = \{\
+			\'91crypto\'92: 10,\
+			\'91stocks: 6,\
+			\'91bonds\'92: 4\
+		\}\
+		for asset, riskiness in assets\cf2 .items()\cf3 :\
+			print(riskiness)\cf4 \
+	output:\
+	10\
+	6\
+	4\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
+\
+6. is vs ==\
+{\field{\*\fldinst{HYPERLINK "https://dbader.org/blog/difference-between-is-and-equals-in-python"}}{\fldrslt https://dbader.org/blog/difference-between-is-and-equals-in-python}}\
+- is tests to see if a is b are both pointing to same object (b\'92s contents could be = to a, but be a different object)\
+- == tests to see if a == b are both equal to each other\
+\
+\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Questions\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 1. what is an enumerate object? (that is what enumerate() function returns)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 2. is looping through a list using the enumerate function the most elegant/best way to add a column\
+to a data set list of lists?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 \
+3. why can\'92t I use == to check if a value is equal to None? (instead of is) I get same result\
+\
+}

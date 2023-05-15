@@ -1,0 +1,133 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fmodern\fcharset0 Courier;
+\f3\fnil\fcharset0 HelveticaNeue;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red36\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;
+\red0\green0\blue109;\red38\green38\blue38;\red245\green245\blue245;\red83\green83\blue83;\red15\green112\blue1;
+\red169\green14\blue26;\red171\green82\blue27;\red151\green0\blue255;\red202\green202\blue202;\red36\green255\blue255;
+}
+{\*\expandedcolortbl;;\cssrgb\c4983\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c0\c0\c50196;\cssrgb\c20000\c20000\c20000;\cssrgb\c96863\c96863\c96863;\cssrgb\c40000\c40000\c40000;\cssrgb\c0\c50196\c0;
+\cssrgb\c72941\c12941\c12941;\cssrgb\c73333\c40000\c13333;\cssrgb\c66667\c13333\c100000;\cssrgb\c83137\c83137\c83137;\cssrgb\c4983\c100000\c100000;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww14960\viewh20260\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1-1-19\
+Course 1_1_9: Python Programming Beginner\
+Guided Project: Jupyter Notebook\
+\
+1. \cf2 Jupyter environment\cf0 - data science environment that has a nice text editor and a console \
+(originally called IPython)\
+- combines code and text explanations of code (looks like basic Microsoft word editor with built in window to write/execute code?\
+- notebook- jupyter environment window with text editor/console\
+\
+2. \cf2 Integrated Development Platform (IDE).\cf0  ex. Pycharm. focuses more on just working with code\
+\
+3. can run code within a cell by pressing \cf2 Shift + Enter\cf0 \
+- a new cell will be created below it\
+- if I create a string variable that contains read in data from a file, instead of using print() to display, I can just\
+type the variable name and run it. However this will display the raw data with \'93\\n\'94\'92s\
+\
+4. \cf2 kernel\cf0 - defines the programming language that the code\
+ex. top right of jupyter notebook you\'92ll see \'93python 3\'94 that is the kernel in this notebook\
+- think of kernel as a blank slate, no variables have been defined/no models imported\
+- only variables within kernel accessible? \
+- \cf2 restart button\cf0 - in the kernel top menu. this restarts the current kernel session and all the variables are wiped clean. \
+\
+\
+5. \cf2 Markdown Cell \cf0 vs Code Cell\
+- markdown cell- like a mini Microsoft word cell for annotating/explaining code\
+- type # in markdown cell to indicate title\
+- type ## in markdown cell in indicate subtitle\
+- to change a cell to markdown cell go to the top of the window and look for the dropdown menu that reads \'93Code\'94 and then change that to \'93Markdown\'94\
+\
+6. a \cf2 .Ipynb\cf0  is a jupyter notebook type file (need jupyter to open)\
+\
+\
+\
+
+\f1\b Solution to guided project:
+\f0\b0 \
+{\field{\*\fldinst{HYPERLINK "https://github.com/dataquestio/solutions/blob/master/Mission207Solutions.ipynb"}}{\fldrslt https://github.com/dataquestio/solutions/blob/master/Mission207Solutions.ipynb}}\
+\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl400\partightenfactor0
+\ls1\ilvl0
+\f2 \cf3 \cb4 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 year
+\f3 \'a0- Year\cb1 \
+\ls1\ilvl0
+\f2 \cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 month
+\f3 \'a0- Month\cb1 \
+\ls1\ilvl0
+\f2 \cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 date_of_month
+\f3 \'a0- Day number of the month\cb1 \
+\ls1\ilvl0
+\f2 \cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 day_of_week
+\f3 \'a0- Day of week, where 1 is Monday and 7 is Sunday\cb1 \
+\ls1\ilvl0
+\f2 \cb4 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 births
+\f3 \'a0- Number of births\cb1 \
+\pard\pardeftab720\sl340\qr\partightenfactor0
+
+\f2 \cf5 \cb4 \strokec5 In\'a0[\'a0]:\cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf6 \cb7 \strokec6 f \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 open\cf6 \strokec6 (\cf10 \strokec10 "births.csv"\cf6 \strokec6 , \cf10 \strokec10 'r'\cf6 \strokec6 )\
+text \cf8 \strokec8 =\cf6 \strokec6  f\cf8 \strokec8 .\cf6 \strokec6 read()\
+\cf9 \strokec9 print\cf6 \strokec6 (text)\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+\cf5 \cb4 \strokec5 In\'a0[\'a0]:\cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf6 \cb7 \strokec6 lines_list \cf8 \strokec8 =\cf6 \strokec6  text\cf8 \strokec8 .\cf6 \strokec6 split(\cf10 \strokec10 "
+\f4\b \cf11 \strokec11 \\n
+\f2\b0 \cf10 \strokec10 "\cf6 \strokec6 )\
+lines_list\
+\pard\pardeftab720\sl340\qr\partightenfactor0
+\cf5 \cb4 \strokec5 In\'a0[\'a0]:\cb1 \
+\pard\pardeftab720\sl340\partightenfactor0
+\cf6 \cb7 \strokec6 data_no_header \cf8 \strokec8 =\cf6 \strokec6  lines_list[\cf8 \strokec8 1\cf6 \strokec6 :\cf9 \strokec9 len\cf6 \strokec6 (lines_list)]\
+days_counts \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 dict\cf6 \strokec6 ()\
+\
+\pard\pardeftab720\sl340\partightenfactor0
+
+\f4\b \cf9 \strokec9 for
+\f2\b0 \cf6 \strokec6  line 
+\f4\b \cf12 \strokec12 in
+\f2\b0 \cf6 \strokec6  data_no_header:\
+    split_line \cf8 \strokec8 =\cf6 \strokec6  line\cf8 \strokec8 .\cf6 \strokec6 split(\cf10 \strokec10 ","\cf6 \strokec6 )\
+    day_of_week \cf8 \strokec8 =\cf6 \strokec6  split_line[\cf8 \strokec8 3\cf6 \strokec6 ]\
+    num_births \cf8 \strokec8 =\cf6 \strokec6  \cf9 \strokec9 int\cf6 \strokec6 (split_line[\cf8 \strokec8 4\cf6 \strokec6 ])\
+\
+    
+\f4\b \cf9 \strokec9 if
+\f2\b0 \cf6 \strokec6  day_of_week 
+\f4\b \cf12 \strokec12 in
+\f2\b0 \cf6 \strokec6  days_counts:\
+        days_counts[day_of_week] \cf8 \strokec8 =\cf6 \strokec6  days_counts[day_of_week] \cf8 \strokec8 +\cf6 \strokec6  num_births\
+    
+\f4\b \cf9 \strokec9 else
+\f2\b0 \cf6 \strokec6 :\
+        days_counts[day_of_week] \cf8 \strokec8 =\cf6 \strokec6  num_births\
+\
+days_counts\cb1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+\
+
+\f1\b Questions\
+
+\f0\b0 1. IDE vs Jupyter Environment? Is Jupyter a type of IDE?
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 \
+}

@@ -1,0 +1,235 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 Helvetica-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red36\green255\blue255;\red251\green0\blue7;
+\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red88\green138\blue67;\red255\green255\blue255;
+\red202\green202\blue202;\red183\green111\blue179;\red255\green255\blue255;\red205\green205\blue202;\red255\green255\blue255;
+\red204\green204\blue202;\red255\green255\blue255;\red203\green203\blue202;\red141\green213\blue254;\red167\green197\blue151;
+\red202\green202\blue202;}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c4983\c100000\c100000;\cssrgb\c100000\c12195\c0;
+\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c0\c0;\cssrgb\c0\c1\c1;\cssrgb\c41525\c59950\c33208;\cssrgb\c100000\c100000\c100000\c0;
+\cssrgb\c83229\c83229\c83125;\cssrgb\c77331\c52624\c75301;\cssrgb\c100000\c100000\c99849\c0;\cssrgb\c84121\c84115\c82966;\cssrgb\c100000\c100000\c99926\c0;
+\cssrgb\c83681\c83679\c83054;\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c83320\c83320\c83112;\cssrgb\c61545\c86704\c99884;\cssrgb\c71035\c80830\c65726;
+\cssrgb\c83137\c83137\c83137;}
+\margl1440\margr1440\vieww14180\viewh24320\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 Dataquest Notes\
+1/8/19\
+Step 1: Python Introduction\
+Course 2: Python Programming Intermediate\
+Mission 8: Dates in Python\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 1. \cf3 \ul \ulc3 time module\
+\cf2 \ulnone - comes in pythons standard library\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 - deals mainly with 
+\f1\b \cf3 \ul \ulc3 Unix Timestamps
+\f0\b0 \cf0 \ulnone \
+	- unix timestamp- floating point value with no mention of day, month, or year\
+	- this value represents the number of seconds that have passed since the epoch, \
+		
+\f1\b \cf3 \ul \ulc3 epoch
+\f0\b0 \cf0 \ulnone  = first second of the year 1970\
+ex. 	\cf4 import time\cf0 \
+	\cf4 time.time()	\cf0 	# returns current time in unix timestamp: 
+\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 1545895961.1689405
+\f0\fs28 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+2. 
+\f1\b \cf3 time.gmtime()
+\f0\b0 \cf0  function\
+- function in the time module\
+- takes a timestamp as an argument\
+- returns an instance of the 
+\f1\b \cf3 struct_time class 
+\f0\b0 \cf7 which have the following attributes:\
+	
+\f1\b tim_year: 
+\f0\b0 year of the timestamp\
+	
+\f1\b tm_mon: 
+\f0\b0 month of the timestamp (1-12)\
+	
+\f1\b tm_mday:
+\f0\b0  day in the month (1-31)\
+	
+\f1\b tm_hour:
+\f0\b0  hour of the timestamp (0-23)\
+	
+\f1\b tm_min:
+\f0\b0  minute of the timestamp (0-59)\cf0 \
+ex,\
+	\cf4 >>> 	import time\
+		current = time.time()\
+		struct_time = time.gmtime(current)\
+		current_year = struct_time.tm_year\cf0 \
+\
+	\
+3. \ul UTC time\ulnone \
+- abbreviation for \ul Coordinated Universal Time\ulnone \
+- Time at 0 degrees longitude or \ul Greenwich Mean Time\ulnone  (longitude = vertical North to South) No daylight savings\
+	-\ul  Prime Meridian\ulnone  = 0 Degrees Longitude (runs through UK, France, Spain, Algeria in Africa)\
+- this is the accepted time standard within the programing community\
+\
+\
+4. 
+\f1\b \cf3 datetime
+\f0\b0 \cf0  module\
+- better for working with dates than time module\
+- contains a class that\'92s named datetime that represents points in time\
+ex. to create a specific point in time, pass in values when creating an instance of datetime class:\
+	\cf4 >>>	import datetime\
+		nye_2017 = datetime.datetime(year = 2017, month = 12, day = 31, hour=12, minute=59, second=59)\cf0 \
+\
+\
+\
+5. 
+\f1\b \cf3 datetime.utcnow()
+\f0\b0 \cf0  function (part of the datetime module)\
+- returns the current UTC time as a date time instance\
+ex. \
+	\cf4 >>> 	current_datetime = datetime.datetime.utcnow()		\cf7 # datetime instance\cf4 \
+		print(current_datetime)\cf0 \
+	output:\
+	2019-01-08 11:50:47.703987\
+- once you have a datetime instance that represents a specific point in time, you can use the following\
+attributes to return more specific properties:\
+	.year\
+	.month\
+	.day\
+	.hour\
+	.minute\
+	.second\
+	.microsecond\
+- read more in here: {\field{\*\fldinst{HYPERLINK "https://docs.python.org/3/library/datetime.html#datetime.datetime.year"}}{\fldrslt https://docs.python.org/3/library/datetime.html#datetime.datetime.year}}\
+ex2. \
+\cf4 	>>>	import datetime\
+		current_time = datetime.datetime.utcnow()\
+		current_year = current_time.year\
+		current_month =  current_time.month\
+		print(current_year)\
+		print(current_month)\cf0 \
+	output:\
+	2019\
+	1\
+\
+\
+6. 
+\f1\b \cf3 timedelta class 
+\f0\b0 \cf0 (part of the datetime module)\
+ex. \
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f2\fs24 \cf8 \cb9 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec8 # objective: calculate the date for three weeks and two days from now\cf10 \cb9 \strokec10 \
+\cf11 \cb9 \strokec11 import\cf10 \cb9 \strokec10  \cf4 \cb12 \strokec13 datetime\cf10 \cb9 \strokec10 \
+\cf8 \cb9 \strokec8 # 1) create an instance of the datetime class that represents today\cf10 \cb9 \strokec10 \
+\cf4 \cb12 \strokec13 today = datetime.datetime.now() \cf7 \cb14 \strokec15   \cf10 \cb9 \strokec10 \
+\cf8 \cb9 \strokec8 # 2) get an instance of the timedelta class that represents the span of time we're working with\cf10 \cb9 \strokec10 \
+\cf4 \cb16 \strokec17 diff = datetime.timedelta(\cf4 \cb16 \strokec18 weeks\cf4 \cb16 \strokec17  = \cf4 \cb16 \strokec19 3\cf4 \cb16 \strokec17 , \cf4 \cb16 \strokec18 days\cf4 \cb16 \strokec17  = \cf4 \cb16 \strokec19 2\cf4 \cb16 \strokec17 )\cf10 \cb9 \strokec10 \
+\cf8 \cb9 \strokec8 # 3) add these two instances to get the date for three weeks and two days from now\cf10 \cb9 \strokec10 \
+\cf4 \cb14 \strokec15 future = today + diff\cf20 \cb1 \strokec20 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs28 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+ex2.\
+	import datetime\
+	\cf4 # objective: find the date 15 weeks prior to March 22, 2233\cf0 \
+\
+	# create instance of the datetime class that refers to March 22, 2233\
+	\cf4 kirks_birthday = datetime.datetime(year = 2233, month = 3, day = 22)\cf0 \
+\
+	# create an instance of the timedelta class representing 15 weeks and assign to diff\
+	\cf4 diff = datetime.timedelta(weeks = 15)\cf0 \
+\
+	# find the date 15 weeks prior to march 22, 2233 and assign resulting datetime instance to before_kirk\
+	\cf4 before_kirk = kirks_birthday - diff\
+\cf0 	\cf4 print(before_kirk)\cf0 \
+	output:\
+	
+\f2\fs30 \cf5 \cb6 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec5 2232-12-07 00:00:00
+\f0\fs28 \cf0 \cb1 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 \
+\
+\
+\
+7. 
+\f1\b \cf3 datetime.strftime() 
+\f0\b0 \cf0 method to specify how we\'92d like the string output to be formatted\
+- takes a format string as its input\
+- use % to indicate where certain values should go\
+ex. \
+	\cf4 >>>	import datetime\
+		march1 = datetime.datetime(year = 1992, month = 3, day = 1)\
+		pretty_march1 = march1.strftime(\'93%b %d, %Y\'94)\
+		print(pretty_march1)\cf0 \
+	output:\
+	Mar 01, 1992\
+- notice the space after the b and in-between the %d, which means we want a space after month\
+- b is month, d is day, Y is year\
+- upper or lowercase b, d, and Y will change the format\
+- more info here: {\field{\*\fldinst{HYPERLINK "https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior"}}{\fldrslt https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior}}\
+\
+\
+\
+8. 
+\f1\b \cf3 datetime.datetime.strptime( ___, ___ )
+\f0\b0 \cf0  function\
+- allows us to do the reverse of .strftime(), and convert a string to a datetime instance\
+- has two arguments: date string (ex. \'93march 01, 1992\'94) and format string (ex. \'93%b %d, %Y)\
+- returns a datetime instance\
+ex. \
+\cf4 	>>> 	import datetime\
+		march1 = datetime.datetime.strptime(\'91March 01, 1992\'92, \'91%B %d, %Y\'92)\
+		print(march1)\cf0 \
+	output:\
+	1992-03-01 00:00:00\
+- if we inspect data and find the format of a string date, we can save ourselves out of manual string manipulation\
+- we could even use datetime.strptime() and datetime.strftime() together to convert a date string to datetime object\
+and then convert it to a date string to a different format\
+\
+\
+\
+		\
+\
+	\
+9. 
+\f1\b \cf3 datetime.datetime.fromtimestamp()
+\f0\b0 \cf0  function \
+- converts Unix time stamp into datetime object\
+- takes in Unix time stamp, returns datetime object\
+\
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf0 Questions\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 1. what is a library? Library vs. Module?\
+\
+2. why 1970? for epoch?\
+\
+3. what timezone is the unix timestamp module?\
+\
+4. need better explanation of objective 3:\
+\cf4 import datetime\
+current_datetime = datetime.datetime.utcnow()\
+current_year = current_datetime.year\
+current_month = current_datetime.month
+\f1\b \cf0 \
+\
+
+\f0\b0 5. what is the datetime notation below/what is the last decimal?\
+2019-01-31 20:03:57\cf4 .090898\
+\
+\
+\
+}
