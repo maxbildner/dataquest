@@ -5,9 +5,9 @@ comment 2
 # "everything is an object"
 
 # PYTHON REVIEW NOTES / CHEAT SHEET
-# 1) Multi Variable Assigment
+# 1) Multi Variable Assignment
 # - don't have to define variable type like in other languages
-# - assigning multple values to multiple variables:
+# - assigning multiple values to multiple variables:
 print("------- 1)")
 a, b, c = 1, 2, 3
 print(a)  # => 1
@@ -15,6 +15,9 @@ print(b)  # => 2
 print(c)  # => 3
 # JS multi variable assigment
 # [ a, b, c ] = [ 1, 2, 3 ]
+
+# Assign the same value to multiple variables
+# https://note.nkmk.me/en/python-multi-variables-values/#:~:text=You%20can%20assign%20the%20same,variables%20with%20the%20same%20value.&text=After%20assigning%20the%20same%20value,to%20one%20of%20the%20variables
 
 
 # 2) Variable Naming- same as JS
