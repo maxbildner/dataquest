@@ -6,13 +6,47 @@ comment 2
 
 # PYTHON REVIEW NOTES / CHEAT SHEET
 
-# 1) OBJECTS
+# ________________________________________________________________________________
+# 1) COMPILED vs INTERPRETED
+# PYTHON- Usually Interpreted
+# JS- Usually Interpreted
+
+
+# ________________________________________________________________________________
+# 2) STATICALLY vs DYNAMICALLY Typed Language
+# PYTHON- Dynamically Typed
+# JS- Dynamically Typed
+#
+# DYNAMICALLY TYPED Language =
+#   - perform type checking at run-time
+#   - no need to declare variables before you use them
+# STATICALLY TYPED Language =
+#   - perform type checking at compile-time
+#   - must declare variables before you use them
+# TYPE CHECKING
+#   - verifiying if the data types are compatible with the operands being used on them
+
+
+# ________________________________________________________________________________
+# 3) STRONGLY vs WEAKLY Typed Language
+# PYTHON- Strongly
+# JS- Weakly
+#
+# STRONGLY = does NOT allow implicit conversion between unrelated data types
+# WEAKLY = DOES allow implicit conversion between unrelated data types
+# Python Ex.
+print("------- 3)")
+1 + "2"  # TypeError!
+
+
+# ________________________________________________________________________________
+# 4) OBJECTS
 # PYTHON- OBJECTS
 #   - everything is an object
 
 # JAVASCRIPT- OBJECTS
 #   - almost everything is an object
-#   - primitive data types (number, string, boolean, null, undefined, symbol) are NOT objects
+#   - 7 primitive data types (number, string, boolean, null, undefined, symbol, bigInt) are NOT objects
 #   - JS objects are more like Python classes intead of like python dictionaries
 #   - JS objects are a storage of key:value pairs
 #   - JS objects are also called "dictionaries"
@@ -22,7 +56,22 @@ comment 2
 
 
 # ________________________________________________________________________________
-# 2) PRIMITIVE vs NON-PRIMITIVE DATA TYPES
+# 5) DATA TYPES
+# PYTHON- DATA TYPES
+#   - 5 Main Types:
+#     - Numeric
+#       - Integer (ex. 13, -1), Float (ex. 1.0), Complex
+#     - Dictionary
+#     - Boolean (ex. True, False)
+#     - Set
+#     - Sequence
+#       - String, List, Tuple
+# https://www.theengineeringprojects.com/2020/06/how-to-use-data-types-in-python.html
+# https://www.geeksforgeeks.org/python-data-types/
+
+
+# ________________________________________________________________________________
+# 6) PRIMITIVE vs NON-PRIMITIVE DATA TYPES
 # PYTHON- PRIMITIVE DATA TYPE
 #   - no such thing as a "primitive" like in other languages (Java, JavaScript)
 # https://www.quora.com/Does-Python-have-primitive-types
@@ -44,28 +93,13 @@ comment 2
 
 
 # ________________________________________________________________________________
-# 3) DATA TYPES
-# PYTHON- DATA TYPES
-#   - 5 Main Types:
-#     - Numeric
-#       - Integer (ex. 13, -1), Float (ex. 1.0), Complex
-#     - Dictionary
-#     - Boolean (ex. True, False)
-#     - Set
-#     - Sequence
-#       - String, List, Tuple
-# https://www.theengineeringprojects.com/2020/06/how-to-use-data-types-in-python.html
-# https://www.geeksforgeeks.org/python-data-types/
-
-
-# ________________________________________________________________________________
-# 4) IMMUTABLE DATA TYPES
+# 7) IMMUTABLE DATA TYPES
 # PYTHON- IMMUTABLE DATA TYPES
 #   - objects that cannot be changed after creation:
 #     - 1 Int (ex. 5, -5)
 #     - 2 Float (ex. -5.0)
-#     - 3 Tuple
-#     - 4 Complex
+#     - 3 Complex
+#     - 4 Tuple
 #     - 5 String (ex. "ye", 'ye')
 #     - 6 Bytes
 #     - 7 Frozen Set
@@ -85,34 +119,19 @@ comment 2
 
 
 # ________________________________________________________________________________
-# 5) MUTABLE DATA TYPES
-# PYTHON- MUTABLE DATA TYPES
-# - List, Set, Dictionary, ByteArray, Array
-# https://www.scientecheasy.com/2023/01/mutable-and-immutable-in-python.html/
+# 8) Variable Declaration / Assignment
+# PYTHON
+# - no need to declare variable data types like in C++ (ex. int myNum;)
+# - no declaration needed before assignment!
+# - no keywords (ex. let, var, const) when declaring like in JS
+#
+# JS
+# - no need to declare variable before assignment but you can!
+# - keywords (ex. let, var, const) to control variable scope
 
 
 # ________________________________________________________________________________
-# 6) NONE- None
-# JS has "null" or "undefined" data types, but python does not! python has "None" datatype
-print("------- 6)")
-print(type(None))  # => <type 'NoneType'>
-
-
-# ________________________________________________________________________________
-# 7) LIST DATA TYPE
-# - Sequences = list, arrays, tuple, range
-# - lists can store different datatypes (unlike array)
-# - mutable (unlike tuple)
-# - JS does NOT support negative indexing like in python!
-# - JS length: arr.length    python length: len(arr)
-print("------- 7)")
-list1 = ["a", "b", 4]
-print(list1[-1])  # => 4
-print(len(list1))  # => 3
-
-
-# ________________________________________________________________________________
-# 8) Variable Naming- same as JS
+# 9) Variable Naming- same as JS
 # - A to Z, or 0 to 9, or "_"
 # - first character must start with letter or "_", no special characters
 # JS also first char must begin with letter or "_", no special characters
@@ -122,7 +141,7 @@ print(_apple)
 
 
 # ________________________________________________________________________________
-# 9) Multi Variable Assignment
+# 10) Multi Variable Assignment
 # - don't have to define variable type like in other languages
 # - assigning multiple values to multiple variables:
 print("------- 1)")
@@ -138,7 +157,7 @@ print(c)  # => 3
 
 
 # ________________________________________________________________________________
-# 10) CONSTANTS
+# 11) CONSTANT VARIABLES
 # - convention is to use all caps (can use lowercase)
 # - lets others know this variable shouldn't be changed (but in reality we can reassign with no errors!)
 print("------- 3)")
@@ -149,7 +168,27 @@ print(PRICE)  # => 2
 
 
 # ________________________________________________________________________________
-# 11) Function Hoisting
+# 12) NONE Data Type- None
+# JS has "null" or "undefined" data types, but python does not! python has "None" datatype
+print("------- 6)")
+print(type(None))  # => <type 'NoneType'>
+
+
+# ________________________________________________________________________________
+# 13) Function Hoisting
 # PYTHON- functions are NOT hoisted
 # JS- functions declarations ARE hoisted (function expressions/arrow functions are not)
 # https://i.redd.it/1x4ho2qngv421.jpg
+
+
+# ________________________________________________________________________________
+# 14) LIST DATA TYPE
+# - Sequences = list, arrays, tuple, range
+# - lists can store different datatypes (unlike array)
+# - mutable (unlike tuple)
+# - JS does NOT support negative indexing like in python!
+# - JS length: arr.length    python length: len(arr)
+print("------- 7)")
+list1 = ["a", "b", 4]
+print(list1[-1])  # => 4
+print(len(list1))  # => 3
