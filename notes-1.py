@@ -1,8 +1,7 @@
-""" comment 1
-comment 2
+""" 
+Multi Line Comments
+line 2
 """
-
-# "everything is an object"
 
 # PYTHON REVIEW NOTES / CHEAT SHEET
 
@@ -60,12 +59,12 @@ print("------- 3)")
 # PYTHON- DATA TYPES
 #   - 5 Main Types:
 #     - Numeric
-#       - Integer (ex. 13, -1), Float (ex. 1.0), Complex
-#     - Dictionary
+#       - Integer (ex. 13, -1), Float (ex. 1.0), Complex (ex. 3j)
+#     - Dictionary (ex. { 5: True, "a": 2 })
 #     - Boolean (ex. True, False)
-#     - Set
+#     - Set (ex. { "apple", 2, "mango" } )
 #     - Sequence
-#       - String, List, Tuple
+#       - String (ex. "ye", 'ye'), List (ex. [1, "a", [3]] ), Tuple (ex. (1, "a", [ "b", 2 ]) )
 # https://www.theengineeringprojects.com/2020/06/how-to-use-data-types-in-python.html
 # https://www.geeksforgeeks.org/python-data-types/
 
@@ -98,8 +97,8 @@ print("------- 3)")
 #   - objects that cannot be changed after creation:
 #     - 1 Int (ex. 5, -5)
 #     - 2 Float (ex. -5.0)
-#     - 3 Complex
-#     - 4 Tuple
+#     - 3 Complex (ex. 3j)
+#     - 4 Tuple (ex. (1, "a", [ "b", 2 ]) )
 #     - 5 String (ex. "ye", 'ye')
 #     - 6 Bytes
 #     - 7 Frozen Set
@@ -135,7 +134,7 @@ print("------- 3)")
 # - A to Z, or 0 to 9, or "_"
 # - first character must start with letter or "_", no special characters
 # JS also first char must begin with letter or "_", no special characters
-print("------- 2)")
+print("------- 9)")
 _apple = 2  # GOOD
 print(_apple)
 
@@ -144,7 +143,7 @@ print(_apple)
 # 10) Multi Variable Assignment
 # - don't have to define variable type like in other languages
 # - assigning multiple values to multiple variables:
-print("------- 1)")
+print("------- 10)")
 a, b, c = 1, 2, 3
 print(a)  # => 1
 print(b)  # => 2
@@ -160,7 +159,7 @@ print(c)  # => 3
 # 11) CONSTANT VARIABLES
 # - convention is to use all caps (can use lowercase)
 # - lets others know this variable shouldn't be changed (but in reality we can reassign with no errors!)
-print("------- 3)")
+print("------- 11)")
 PRICE = 5
 PRICE = 2
 print(PRICE)  # => 2
@@ -170,7 +169,7 @@ print(PRICE)  # => 2
 # ________________________________________________________________________________
 # 12) NONE Data Type- None
 # JS has "null" or "undefined" data types, but python does not! python has "None" datatype
-print("------- 6)")
+print("------- 12)")
 print(type(None))  # => <type 'NoneType'>
 
 
@@ -184,11 +183,18 @@ print(type(None))  # => <type 'NoneType'>
 # ________________________________________________________________________________
 # 14) LIST DATA TYPE
 # - Sequences = list, arrays, tuple, range
-# - lists can store different datatypes (unlike array)
-# - mutable (unlike tuple)
-# - JS does NOT support negative indexing like in python!
-# - JS length: arr.length    python length: len(arr)
-print("------- 7)")
+# - 1) supports NEGATIVE INDEXING to refer to elements starting from end of list
+#   - JS does NOT support negative indexing like in python! (won't get error)
+# - 2) will get ERROR if you try to index an element out of range/doesn't exist
+#   - JS will NOT get error if indexing an element out of range/doesn't exist (will get undefined)
+# - 3) len( list ) method to get length of list in O(1) time
+#   - JS arr.length
+# Ex.
+print("------- 14)")
 list1 = ["a", "b", 4]
 print(list1[-1])  # => 4
+print(list1[-2])  # => "b"
 print(len(list1))  # => 3
+
+# - lists can store different datatypes (unlike array)
+# - mutable (unlike tuple)
