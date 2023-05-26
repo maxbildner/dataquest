@@ -35,7 +35,7 @@ line 2
 # WEAKLY = DOES allow implicit conversion between unrelated data types
 # Python Ex.
 print("------- 3)")
-1 + "2"  # TypeError!
+# 1 + "2"  # TypeError!
 
 
 # ________________________________________________________________________________
@@ -181,7 +181,17 @@ print(type(None))  # => <type 'NoneType'>
 
 
 # ________________________________________________________________________________
-# 14) LIST DATA TYPE
+# 14) DETERMINE VALUE's DATA TYPE
+# type( __ )
+# Ex.
+print("------- 14)")
+print(type([1, 2, "a"]))  # => <type 'list'>
+
+# JS- typeof [1, 2, "a"] // "object"
+
+
+# ________________________________________________________________________________
+# 15) LIST DATA TYPE
 # - Sequences = list, arrays, tuple, range
 # - 1) supports NEGATIVE INDEXING to refer to elements starting from end of list
 #   - JS does NOT support negative indexing like in python! (won't get error)
@@ -190,7 +200,7 @@ print(type(None))  # => <type 'NoneType'>
 # - 3) len( list ) method to get length of list in O(1) time
 #   - JS arr.length
 # Ex.
-print("------- 14)")
+print("------- 15)")
 list1 = ["a", "b", 4]
 print(list1[-1])  # => 4
 print(list1[-2])  # => "b"
@@ -198,3 +208,71 @@ print(len(list1))  # => 3
 
 # - lists can store different datatypes (unlike array)
 # - mutable (unlike tuple)
+
+
+# ________________________________________________________________________________
+# 16) LIST MANIPULATION- ADDING ITEM
+# list.append( item ) #=> None
+# - adds item to end of list
+# - param: item to addd (only 1 param!)
+# - return: None
+# - will get error if you try adding more than one param
+# Ex.
+print("------- 16)")
+list1 = [1, 2]
+list1.append("a")
+print(list1)  # => [ 1, 2, "a" ]
+
+# JS array.push(item, item2, ...) => (num) length of new array
+
+
+# ________________________________________________________________________________
+# 17) LIST MANIPULATION- COMBINING LISTS
+# - use + plus operator
+# - listA + listB   #=> listC
+# - returns new list where items from listB are spread onto the end of listA
+
+# Ex.
+print("------- 17)")
+listA = [1, 2]
+listB = ["a", 4]
+listC = listA + listB
+print(listA, listB, listC)  # => ([1, 2], ['a', 4], [1, 2, 'a', 4])
+
+# JS- adding two lists converts them both to strings, then concatenates listB to the end of listA
+# Ex.
+# let listA = [ 1, 2 ];
+# let listB = [ "a", 4 ];
+# console.log(listA + listB); //=> "1,2a,4"
+
+# JS- use array1.concat(iterable) //=> new array
+#   - use above for similar behavior to python +
+
+
+# ________________________________________________________________________________
+# 18) LIST MANIPULATION- SLICING
+# - use colon :
+# - start (inclusive) : end idx (exclusive) : step (int, optional defaults to 1)
+# - returns new list of sliced items
+print("------- 18)")
+# Ex 1.
+list1 = ["a", "b", "c", "d"]
+print(list1[0:3])  # => ["a", "b", "c"]
+
+# Ex 2.
+list1 = ["a", "b", "c", "d"]
+print(list1[1:-1])  # => ["b", "c"]
+
+# Ex 3.
+print(list1[1:])  # => ["b", "c", "d"]
+
+# Ex 4.
+print(list1[:-1])  # => ["a", "b", "c"]
+
+# a[start:stop]  # items start through stop-1
+# a[start:]      # items start through the rest of the array
+# a[:stop]       # items from the beginning through stop-1
+# a[:]           # a copy of the whole array
+
+# JS- will get ERROR if you try to use colon to slice an array index
+#   - use array.slice(startIncl, endExcl)
