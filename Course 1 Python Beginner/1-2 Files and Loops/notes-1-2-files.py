@@ -1,31 +1,51 @@
 # ________________________________________________________________________________
-# - there is no C++ style loops- Ex. for (int i = 0; i < n; i++){ }
-
-# 1) LOOPS- for ___ in SEQUENCE:
-#   __ = iterator variable can be named anything (only accessible within this for loop)
-#   - if looping over sequence (list, string), iterator refers to ELEMENT in current iteration
-#   - CAN guarantee loop order
-
-# Ex1. list
+# 1) open(file, mode)
+#    - file (string) = relative or absolute path to file
+#    - mode (string) = optional mode of working with the file, default "r" for read
+#      "r" read,   "w" write,  "a" append,   "x" create
+#    - returns (file object)
+#      - file object doesn't have actual file contents, but acts like a placeholder to file contents
 print("1) ----------------------------")
 print("Ex1.")
-fruits = ["apple", "mango", "pear"]
-for item in fruits:
-    print(item)  # => "apple", "mango", "pear"
+f = open("../../datasets/BalanceSheetSummaries.csv", "r")
+print(type(f))  # <type 'file'>
+print(
+    f
+)  # <open file '../../datasets/BalanceSheetSummaries.csv', mode 'r' at 0x7fed38026ed0>
 
-# Ex2. string
-# - CAN guarantee loop order
+
+# ________________________________________________________________________________
+# 2) file.read(n)
+#    - file = file object
+#    - n (int) = optional number of bytes or characters? to read from file. default is entire file
+#    - returns (string) representation of opened file
+#    - if csv file, returned string will most likely contain '\n' new line characters
+print("")
+print("2) ----------------------------")
+print("Ex1.")
+f = open("../../datasets/BalanceSheetSummaries.csv", "r")
+data = f.read(5)
+print(len(data))  # 5
+print(data)  # 'Fund '
+
+
+# ________________________________________________________________________________
+# 3) string.split(delimeter)
+#    - delimeter (string) = what to split/separate string by (ex. ",", "\n")
+#    - returns (list) of items split by the delimeter
+#    - will get error if you pass in empty string '' delimeter
+print("")
+print("3) ----------------------------")
+print("Ex1.")
+fruits = "apple,pear,mango"
+print(fruits.split(","))  # [ 'apple', 'pear', 'mango' ]
+
+# JS- SAME!
+# - except you CAN pass in empty string delimeter
+
 print("")
 print("Ex2.")
-name = "abcd"
-for char in name:
-    print(char)  # => "a", "b", "c", "d"
-
-# JS
-# - __ iterator variable refers to the stringified KEY (PROPERTY) in the iterable NOT the element
-# - CAN guarantee loop order for iterable (array, string)
-# Ex1.
-# let fruits = ["apple", "mango", "pear"]
-# for (const key in fruits) {
-#   console.log(key); //=> "0", "1", "2"
-# }
+f = open("../../datasets/BalanceSheetSummaries.csv", "r")
+data = f.read(1000)
+banks = data.split("\n")
+print(banks)
