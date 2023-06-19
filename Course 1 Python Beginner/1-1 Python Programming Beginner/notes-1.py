@@ -276,3 +276,37 @@ print(list1[:-1])  # => ["a", "b", "c"]
 
 # JS- will get ERROR if you try to use colon to slice an array index
 #   - use array.slice(startIncl, endExcl)
+
+
+# ________________________________________________________________________________
+# 19) COMPARISON OPERATORS- EQUALITY
+# - same as JS except no strict equality (===), only == equality
+# - equality == operator compares values (not memory location like JS)
+
+# JS
+# - strict equality (===) does NOT perform type coercion if necessary. Ex. 1 === "1"  // false
+# - loose equality (==) DOES perform type coercion if necessary. Ex 1 == "1"   // true
+# - == equality operator for non-primitives (objects) compares memory location NOT values
+
+print("------- 19)")
+# Ex 1.
+print(1 == "1")  # False
+
+# Ex 2.
+print([1, 2, "a"] == [1, 2, "a"])  # True
+
+# ________________________________________________________________________________
+# 20) ARITHMETIC OPERATORS- EXPONENT
+# - same as JS **
+print("------- 20)")
+# Ex 1.
+print(3**2)  # 9
+
+# JS has ** or Math.pow(base, exp)
+
+# ________________________________________________________________________________
+# 21) LOGICAL OPERATORS
+# PYTHON  JS
+# and     &&
+# or      ||
+# not     !
