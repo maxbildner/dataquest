@@ -114,3 +114,26 @@ print("Ex4.")
 dic = {"a": 2, "b": 3}
 print("a" in dic)  # True
 print("z" in dic)  # False
+
+# JS
+# - for objects, the "in" keyword does NOT check for values, where python DOES
+# - Ex JS:
+# [3] in [ "a", 2, [3] ]    // false
+
+# ________________________________________________________________________________
+# 9) EXPRESSIONS vs STATEMENTS
+# EXPRESSIONS
+# - expressions evaluate to at least one value
+# - expressions are also statements, but not all statements are expressions
+print("")
+print("9) ----------------------------")
+# Ex.
+1 + 2
+print("ye")
+"hi"
+
+# STATEMENTS
+# - made up of expressions
+x = 10
+print("ye")
+if 1 < 2: x = "yep"
