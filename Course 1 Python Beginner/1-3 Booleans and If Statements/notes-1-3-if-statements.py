@@ -22,9 +22,13 @@ else:
 # ________________________________________________________________________________
 # 4) shorthand if else- python 2.5+ only
 # value_when_true if condition else value_when_false
+# - can NOT have statements in value_when_false, only expressions!
 print("")
 print("4) ----------------------------")
 print("true") if 2 < 10 else print("false")  # => true
+
+# JS
+# - CAN have statements or expressions in value_when_true or value_when_false!
 
 # ________________________________________________________________________________
 # 5) if elif
